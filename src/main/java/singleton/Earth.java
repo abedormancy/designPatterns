@@ -5,9 +5,7 @@ package singleton;
  */
 public class Earth {
 
-    private Earth() {
-        System.out.println("Earth Constractor.");
-    }
+    private Earth() {}
 
     public static Earth getInstance() {
         return LazyHolder.earthInstance;

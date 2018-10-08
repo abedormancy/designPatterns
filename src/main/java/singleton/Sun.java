@@ -7,9 +7,7 @@ public class Sun {
 
     private volatile static Sun sun;
 
-    private Sun() {
-        System.out.println("Sun Constractor.");
-    }
+    private Sun() {}
 
     public static Sun getInstance() {
         if (sun == null) {

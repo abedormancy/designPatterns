@@ -7,9 +7,7 @@ public class Moon {
 
     private static Moon moon = new Moon();
 
-    private Moon() {
-        System.out.println("Moon Constractor.");
-    }
+    private Moon() {}
 
     public static Moon getInstance() {
         return moon;
