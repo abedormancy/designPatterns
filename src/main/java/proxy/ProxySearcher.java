@@ -2,6 +2,7 @@ package proxy;
 
 /**
  * Created by abedormancy@gmail.com on 2018/3/14.
+ * Proxy 代理主题角色
  */
 public class ProxySearcher implements Searcher {
 

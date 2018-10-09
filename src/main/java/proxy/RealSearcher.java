@@ -2,6 +2,7 @@ package proxy;
 
 /**
  * Created by abedormancy@gmail.com on 2018/3/14.
+ * RealSubject 真实主题角色
  */
 public class RealSearcher implements Searcher {
     @Override
