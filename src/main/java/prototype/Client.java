@@ -23,6 +23,6 @@ public class Client {
         System.out.println("Receiver name: " + currentInfo.getReceiverName());
         System.out.println("Receiver address: " + currentInfo.getReceiverAddress());
         System.out.println("Sender name: " + currentInfo.getSenderName());
-        System.out.println("Sender Phone No.: " + currentInfo.getSenderPhoneNo());
+        System.out.println("Sender TinyBulb No.: " + currentInfo.getSenderPhoneNo());
     }
 }
