@@ -2,6 +2,7 @@ package composite;
 
 /**
  * Created by abedormancy@gmail.com on 2018/3/15.
+ * 文本文件 - 充当 Leaf 叶子构件
  */
 public class TextFile extends AbstractFile {
 
@@ -12,23 +13,7 @@ public class TextFile extends AbstractFile {
     }
 
     @Override
-    public void add(AbstractFile file) {
-        System.out.println("unsupported");
-    }
-
-    @Override
-    public void remove(AbstractFile file) {
-        System.out.println("unsupported");
-    }
-
-    @Override
-    public AbstractFile getChild(int index) {
-        System.out.println("unsupported");
-        return null;
-    }
-
-    @Override
     public void killVirus() {
-        System.out.println("对文本文件 '"+name+"' 进行杀毒...");
+        System.out.println("对文本文件 '" + name + "' 进行杀毒...");
     }
 }
