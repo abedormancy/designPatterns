@@ -9,7 +9,7 @@ public class Adapter extends Socket implements Voltage {
     @Override
     public int output() {
         int v = super.output();
-        // 模拟将插座的 220V 转换成 5V
+        // 模拟将插座的 220V 转换成 5V，此方法是适配器模式的核心
         return v / 44;
     }
 }
