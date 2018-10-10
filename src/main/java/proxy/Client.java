@@ -30,6 +30,11 @@ package proxy;
  *
  * Java 动态代理
  * desc：需要实现 InvocationHandler 接口
+ *
+ * 适用场景：
+ * 1. 想隐藏某个类时
+ * 2. 当一个类需要对不同调用者提供不同的调用权限时
+ * 3. 想要扩展某个类的功能时
  */
 public class Client {
 
