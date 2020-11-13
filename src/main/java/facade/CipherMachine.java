@@ -1,10 +1,10 @@
 package facade;
 
-import java.util.Base64;
-
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 
 /**
  * Created by Abe on 10/9/2018.
@@ -38,30 +38,27 @@ public class CipherMachine {
         return decrypt(key, initVector, encrypted);
     }
 
-    private static final String encrypt(String key, String initVector, String value) {
+    private static String encrypt(String key, String initVector, String value) {
         try {
-            IvParameterSpec iv = new IvParameterSpec(initVector.getBytes("UTF-8"));
-            SecretKeySpec skeySpec = new SecretKeySpec(toKey(key).getBytes("UTF-8"), "AES");
+            IvParameterSpec iv = new IvParameterSpec(initVector.getBytes(StandardCharsets.UTF_8));
+            SecretKeySpec sKeySpec = new SecretKeySpec(toKey(key).getBytes(StandardCharsets.UTF_8), "AES");
 
             Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING");
-            cipher.init(Cipher.ENCRYPT_MODE, skeySpec, iv);
-
+            cipher.init(Cipher.ENCRYPT_MODE, sKeySpec, iv);
             byte[] encrypted = cipher.doFinal(value.getBytes());
-
-            String encryptedString = Base64.getEncoder().encodeToString(encrypted);
-            return encryptedString;
+            return Base64.getEncoder().encodeToString(encrypted);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
-    private static final String decrypt(String key, String initVector, String encrypted) {
+    private static String decrypt(String key, String initVector, String encrypted) {
         try {
-            IvParameterSpec iv = new IvParameterSpec(initVector.getBytes("UTF-8"));
-            SecretKeySpec skeySpec = new SecretKeySpec(toKey(key).getBytes("UTF-8"), "AES");
+            IvParameterSpec iv = new IvParameterSpec(initVector.getBytes(StandardCharsets.UTF_8));
+            SecretKeySpec sKeySpec = new SecretKeySpec(toKey(key).getBytes(StandardCharsets.UTF_8), "AES");
 
             Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING");
-            cipher.init(Cipher.DECRYPT_MODE, skeySpec, iv);
+            cipher.init(Cipher.DECRYPT_MODE, sKeySpec, iv);
 
             byte[] original = cipher.doFinal(Base64.getDecoder().decode(encrypted));
 
@@ -71,20 +68,17 @@ public class CipherMachine {
         }
     }
 
-    private static final String toKey(String key) {
+    private static String toKey(String key) {
         int len;
         if (key == null || key.trim().length() == 0 || (len = key.length()) < 6) {
-            throw new IllegalArgumentException("dudulu .. >= 6");
+            throw new IllegalArgumentException("key length should be >= 6");
         }
-        len = 16 - len;
-        if (len <= 10) {
-            return cache[len] + key;
-        } else return key;
+        return cache[16 - len] + key;
     }
 
     public static void main(String[] args) {
         CipherMachine cipher = new CipherMachine();
-        String value = cipher.encrypt("abedormancY", "hello world. 神啊.");
+        String value = cipher.encrypt("123456", "hello world. 神啊.");
         System.out.println(value);
         value = cipher.decrypt("abedormancY", value);
         System.out.println(value);

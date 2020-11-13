@@ -18,7 +18,7 @@ package facade;
 public class Client {
 
     public static void main(String[] args) {
-        EncryptFacade encrypt = new EncryptFacade("abedormancY");
+        EncryptFacade encrypt = new EncryptFacade("1234");
         encrypt.fileEncrypt("r:/1.txt", "r:/2.txt");
         encrypt.fileDecrypt("r:/2.txt", "r:/3.txt");
     }

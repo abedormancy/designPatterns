@@ -1,7 +1,6 @@
 package facade;
 
-import java.io.*;
-import java.nio.charset.Charset;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -21,8 +20,4 @@ public class FileReader {
         }
     }
 
-    public static void main(String[] args) {
-        String text = new FileReader().read("r:/1.txt");
-        System.out.println(text);
-    }
 }
