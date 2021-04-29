@@ -14,7 +14,7 @@ public class TinyBulb {
         int v = voltage.output();
         if (v < 3) {
             System.out.println("小灯泡好像亮不起来~");
-        } else if (v >= 3 && v <= 10) {
+        } else if (v <= 10) {
             System.out.println("小灯泡亮起来啦!");
         } else {
             // 真实事件，小时候 220V 直接怼上去，爆炸跳闸，好在没炸到眼睛.. - -

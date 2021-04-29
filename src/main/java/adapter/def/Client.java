@@ -10,7 +10,7 @@ import java.awt.event.WindowListener;
  * 单接口适配器模式 [接口适配器模式或缺省适配器模式]
  * desc：当只实现一个接口的某一个方法时，可设计一个抽象类实现该接口，并为接口中每个方法提供一个默认实现（空方法），那么该抽象类的子类可
  * 以选择性的覆盖父类中的某些方法类实现需求，它适用于不想使用一个接口中的所有方法的情况
- *
+ * <p>
  * 具体例子直接看 WindowListener,WindowAdapter
  * 缺省适配器一般含有 3 个角色
  * 1.ServiceInterface（适配者接口）
@@ -29,7 +29,7 @@ public class Client {
         window.addWindowListener(new WindowListener() {
             @Override
             public void windowOpened(WindowEvent e) {
-                System.out.println("监听个 opend 事件咋出现这么多我不想监听的方法呢...");
+                System.out.println("监听个 opened 事件咋出现这么多我不想监听的方法呢...");
             }
 
             @Override
