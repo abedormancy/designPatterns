@@ -8,10 +8,10 @@ public class Client {
 
     public static void main(String[] args) {
         IUserDao dao = new UserDao();
-        dao.findUserById("abe");
+        dao.userExists("1");
         System.out.println("-----------------------");
         SimpleProxy proxy = new SimpleProxy();
         dao = (IUserDao) proxy.bind(dao, new LogAdvice());
-        dao.findUserById("abe");
+        dao.userExists("1");
     }
 }

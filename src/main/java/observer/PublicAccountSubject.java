@@ -10,7 +10,7 @@ import java.util.List;
 public class PublicAccountSubject implements Subject {
 
     List<Observer> list = new ArrayList<>();
-    // 推送的文章标题
+    // 公众号
     String accountName;
     // 推送的文章标题
     String title;

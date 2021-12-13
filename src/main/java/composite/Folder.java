@@ -9,8 +9,8 @@ import java.util.List;
  */
 public class Folder extends AbstractFile {
 
-    private String name;
-    private List<AbstractFile> fileList = new ArrayList<>();
+    private final String name;
+    private final List<AbstractFile> fileList = new ArrayList<>();
 
     public Folder(String name) {
         this.name = name;

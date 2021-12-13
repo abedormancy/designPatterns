@@ -8,7 +8,7 @@ import java.util.Observer;
  */
 public class Subscribe implements Observer {
 
-    private String name;
+    private final String name;
 
     public Subscribe(String name, Observable o) {
         this.name = name;

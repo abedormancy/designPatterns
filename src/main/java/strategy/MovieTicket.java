@@ -6,7 +6,7 @@ package strategy;
  */
 public class MovieTicket {
 
-    private double price;
+    private final double price;
     private Discount discount;
 
     public MovieTicket(double price) {
@@ -22,6 +22,6 @@ public class MovieTicket {
             return price;
         }
         // 调用折扣类的折扣计算方法
-        return discount.caculate(price);
+        return discount.calculate(price);
     }
 }

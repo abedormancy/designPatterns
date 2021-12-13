@@ -36,6 +36,7 @@ public class Client {
                 .flatMap(Arrays::stream)
                 .map(UserObserver::new)
                 .collect(Collectors.toList());
+
         // 大家都关注了公众号A，只有'白'关注了公众号B
         obList.forEach(accountA::registerObserver);
         accountB.registerObserver(obList.get(2));

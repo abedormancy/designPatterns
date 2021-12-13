@@ -1,15 +1,14 @@
-package mediator;
+package memento;
 
 /**
- * Created by Abe on 10/11/2018.
- * 中介者模式 / 调停者模式
- * desc：用一个中介对象来封装一系列的对象交互，中介者使各对象不需要显示的互相引用，而且可以独立地改变它们之间的交互
+ * Created by Abe on 10/21/2018.
+ * 备忘录模式
+ * desc：在不破坏封装的前提下，捕获一个对象的内部状态，并在该对象之外保存这个状态，这样可以在以后将对象恢复到原先保存的状态
  *
- * 中介者模式有 4 个角色
- * 1. mediator（抽象中介者）
- * 2. ConcreteMediator（具体中介者）
- * 3. Colleague（抽象同事类）
- * 4. ConcreteColleague（具体同事类）
+ * 备忘录模式含有 3 个角色
+ * 1. Originator（原发器）
+ * 2. Memento（备忘录）
+ * 3. Caretaker（负责人）
  *
  * 这里演示了一个游戏进度保存的简单示例
  */

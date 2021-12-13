@@ -6,5 +6,5 @@ package strategy;
  */
 public interface Discount {
 
-    double caculate(double price);
+    double calculate(double price);
 }

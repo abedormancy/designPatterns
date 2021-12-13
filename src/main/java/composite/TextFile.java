@@ -6,7 +6,7 @@ package composite;
  */
 public class TextFile extends AbstractFile {
 
-    private String name;
+    private final String name;
 
     public TextFile(String name) {
         this.name = name;

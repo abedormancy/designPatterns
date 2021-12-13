@@ -1,8 +1,8 @@
-package mediator;
+package memento;
 
 /**
  * Created by Abe on 10/21/2018.
- * 玩家备忘录类 (  )
+ * 玩家备忘录类 ( Memento )
  */
 public class PlayerMemento {
 

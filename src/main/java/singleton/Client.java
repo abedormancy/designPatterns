@@ -21,6 +21,5 @@ public class Client {
         System.out.println(Moon.getInstance() == Moon.getInstance());
         System.out.println(Sun.getInstance() == Sun.getInstance());
         System.out.println(Earth.getInstance() == Earth.getInstance());
-        System.out.println(Mars.INSTANCE == Mars.INSTANCE);
     }
 }

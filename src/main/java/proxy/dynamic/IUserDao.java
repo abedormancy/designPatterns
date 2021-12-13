@@ -6,6 +6,6 @@ package proxy.dynamic;
  */
 public interface IUserDao {
 
-    boolean findUserById(String userId);
+    boolean userExists(String userId);
 
 }

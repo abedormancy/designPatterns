@@ -14,8 +14,11 @@ public class SimpleProxy implements InvocationHandler {
 	
 	public Object bind(Object obj, IAdvice advice) {
 		this.obj = obj;
+		Class<?> clz = obj.getClass();
+		if (Proxy.isProxyClass(clz)) {
+			return obj;
+		}
 		this.advice = advice;
-		Class<? extends Object> clz = obj.getClass();
 		return Proxy.newProxyInstance(clz.getClassLoader(), clz.getInterfaces(), this);
 	}
 	
@@ -34,7 +37,7 @@ public class SimpleProxy implements InvocationHandler {
 	@Override
 	public Object invoke(Object proxy, Method method, Object[] args)
 			throws Throwable {
-		Object result = null;
+		Object result;
 		advice.before();
 		result = method.invoke(obj, args);
 		advice.after();

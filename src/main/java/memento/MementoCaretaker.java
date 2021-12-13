@@ -1,4 +1,4 @@
-package mediator;
+package memento;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,7 +9,7 @@ import java.util.Map;
  */
 public class MementoCaretaker {
 
-    private Map<Integer, PlayerMemento> mementoList = new HashMap<>();
+    private final Map<Integer, PlayerMemento> mementoList = new HashMap<>();
 
     public void save(int index, Player player) {
         if (player.getHp() < 1) {

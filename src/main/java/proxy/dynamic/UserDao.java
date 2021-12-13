@@ -7,7 +7,7 @@ package proxy.dynamic;
 public class UserDao implements IUserDao {
 
     @Override
-    public boolean findUserById(String userId) {
+    public boolean userExists(String userId) {
         if (userId == null || userId.trim().length() != 1) {
             System.out.println("not found user [id=" + userId + "]");
             return false;

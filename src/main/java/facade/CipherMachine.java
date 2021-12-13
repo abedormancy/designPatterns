@@ -14,7 +14,7 @@ public class CipherMachine {
 
     private String initVector = "0x00000000001111"; // 16 bytes IV
 
-    private static String[] cache = new String[11];
+    private static final String[] cache = new String[11];
 
     static {
         cache[10] = "0000000000";
@@ -78,7 +78,7 @@ public class CipherMachine {
 
     public static void main(String[] args) {
         CipherMachine cipher = new CipherMachine();
-        String value = cipher.encrypt("123456", "hello world. 神啊.");
+        String value = cipher.encrypt("abedormancY", "hello world. 神啊.");
         System.out.println(value);
         value = cipher.decrypt("abedormancY", value);
         System.out.println(value);

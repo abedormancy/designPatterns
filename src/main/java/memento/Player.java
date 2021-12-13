@@ -1,4 +1,4 @@
-package mediator;
+package memento;
 
 /**
  * Created by Abe on 10/21/2018.
@@ -44,8 +44,9 @@ public class Player {
      */
     public void attack(String bossName) {
         progress += 1;
-        if (progress > 100) progress = 100;
-
+        if (progress > 100) {
+            progress = 100;
+        }
         StringBuilder sb = new StringBuilder("玩家准备攻击'").append(bossName).append("', ");
         // 扣除血量
         hp -= bossName.length() * 10;
@@ -54,7 +55,7 @@ public class Player {
         } else {
             sb.append("苦战许久，最终血槽已空，被'").append(bossName).append("'击败");
         }
-        System.out.println(sb.toString());
+        System.out.println(sb);
     }
 
     public void info() {

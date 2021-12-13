@@ -6,7 +6,7 @@ package composite;
  */
 public class ImageFile extends AbstractFile {
 
-    private String name;
+    private final String name;
 
     public ImageFile(String name) {
         this.name = name;

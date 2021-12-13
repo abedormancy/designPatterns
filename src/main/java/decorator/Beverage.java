@@ -6,7 +6,7 @@ package decorator;
  */
 public abstract class Beverage {
 
-    String description = "unknown";
+    protected String description = "unknown";
 
     public String getDescription() {
         return description;
